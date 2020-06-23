@@ -89,6 +89,6 @@
             </div>
         </div>
         <!-- <script src='/dist/main.js'></script> -->
-        <script src="http://localhost:8080/dist/main.js"></script>
+        <script src="{{ $src }}"></script>
     </body>
 </html>
