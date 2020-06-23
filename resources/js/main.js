@@ -1,5 +1,8 @@
-console.log('Hello, this is "main.js" being loaded, LIVE RELOADED!!')
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-setTimeout(() => {
-    console.log('and this happened 500ms later, wow!')
-}, 500)
+const el = document.getElementById('react-app')
+
+const App = () => <p>Hello, this is a react app!</p>
+
+ReactDOM.render(<App />, el)

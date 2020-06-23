@@ -16,7 +16,7 @@ const config = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-react', '@babel/preset-env']
           }
         }
       }
@@ -35,7 +35,7 @@ const server = new WebpackDevServer(compiler, {
     publicPath: '/dist/',
     hot: true,
     open: false,
-    stats: false,
+    stats: true,
     port: 8080,
     disableHostCheck: true,
     headers: {
