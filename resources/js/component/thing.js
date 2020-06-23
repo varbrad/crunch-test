@@ -1,1 +1,1 @@
-export default 'Brad! qweis aasdsd, asdwayoo!!'
+export default 'Brad!'
