@@ -1,9 +1,10 @@
 const path = require('path')
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 const ENTRY = path.resolve(__dirname, '../resources/js/main.js')
-const DIST = path.resolve(__dirname, '../public/dist/')
+const DIST = path.join(__dirname, '../public/dist')
 
 const config = {
   mode: 'development',
@@ -16,26 +17,30 @@ const config = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react', '@babel/preset-env']
+            presets: ['@babel/preset-react', '@babel/preset-env'],
+            plugins: ['react-refresh/babel'],
           }
         }
       }
     ]
   },
+  plugins: [
+      new ReactRefreshWebpackPlugin(),
+  ],
   output: {
     filename: '[name].js',
     path: DIST,
-    publicPath: '/dist/'
+    publicPath: 'http://localhost:8080/dist/',
   },
 }
 
 const compiler = webpack(config)
 const server = new WebpackDevServer(compiler, {
     contentBase: path.join(__dirname, '../public'),
-    publicPath: '/dist/',
-    hot: true,
+    publicPath: 'http://localhost:8080/dist/',
+    hotOnly: true,
     open: false,
-    stats: true,
+    stats: false,
     port: 8080,
     disableHostCheck: true,
     headers: {
