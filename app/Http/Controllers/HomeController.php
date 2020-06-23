@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
@@ -16,9 +17,8 @@ class HomeController extends Controller
         }
     }
 
-    public function __invoke()
+    public function __invoke(): View
     {
-
         $isDev = $this->useDev();
 
         return view('welcome', ['src' => $isDev ? 'http://localhost:8080/dist/main.js' : '/dist/main.js']);
