@@ -1,0 +1,8 @@
+{
+    "entry": {
+      "main": "resources/js/main.tsx"
+    },
+    "out": "public/dist",
+    "manifest": "storage/app/crunch.manifest.json",
+    "publicPath": "/dist/"
+  }
