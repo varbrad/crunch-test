@@ -5,7 +5,7 @@ const Counter = () => {
     const [state, setState] = useState(0)
     return (
         <div>
-            <p>helllooasodakosd: {state}</p>
+            <p>The values have now been updated: {state}</p>
             <p>{thing}</p>
             <button onClick={() => setState(state + 1)}>+1</button>
         </div>

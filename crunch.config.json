@@ -1,8 +1,13 @@
 {
     "entry": {
-      "main": "resources/js/main.tsx"
+        "main": "resources/js/main.tsx"
     },
     "out": "public/dist",
     "manifest": "storage/app/crunch.manifest.json",
-    "publicPath": "/dist/"
-  }
+    "publicPath": "/dist/",
+    "dev": {
+        "port": 8080,
+        "contentBase": "public",
+        "hotOnly": true
+    }
+}
